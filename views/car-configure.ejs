@@ -1,0 +1,196 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+	</head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	<body>
+		<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light ">
+	  		<a class="navbar-brand" href="#"><img src="img/Capture3.png">Rapid Rides</a>
+	  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav nav pills ml-auto">
+			    	<li class="nav-item ">
+			        	<a class="nav-link" href="index-user.html">Home</a>
+			      	</li>
+			        <!--<li class="nav-item">
+			        	<a class="nav-link" href="Login.html">Login</a>
+			        </li>-->
+			      	<li class="nav-item active">
+			        	<a class="nav-link" href="Cars-user.html">Our Cars</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link " href="Enquire-user.html">Enquire</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="About Us-user.html">About Us</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="Contact Us-user.html">Contact Us</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="Feedback-user.html">Feedback</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="index.html">Log Out</a>
+			    	</li>
+			  	</ul>
+			</div>
+		</nav>
+    </section>
+    <% if (available == 0){%>
+		<div class="alert alert-warning" style="color:black; margin-left: 150px;">
+			<center><strong>The car you requested is unavailable right now.</strong>Try again later</center>
+		</div>
+		<% } %>
+	<section id="login">
+		<center><div class="sidenav">
+         	<center><div class="login-main-text">
+            	<h2>Your're just a step away!</h2>
+            	<p>Configure your car according to your needs!</p>
+         	</div></center>
+      	</div>
+      	<div class="main">
+         	<div class="col-md-6 col-sm-12">
+            	<div class="login-form">
+               		<form style="margin-top:-80px;" action="http://localhost:8080/configure" method="POST">
+               			<div class="form-group">
+                           <div class="form-row align-items-center">
+                                <div class="col-auto my-1">
+                                    <label style="font-family: Helvetica; font-size: 18px; text-align: left;">Choose your Car</label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="carSel">
+                                        <option selected>Select</option>
+                                        <optgroup label="Hatchback">
+                                        <option value="Swift">Swift</option>
+                                        <option value="Elite i20">Elite i20</option>
+                                        <option value="Jazz">Jazz</option>
+                                        </optgroup>
+                                        <optgroup label="Sedan">
+                                        <option value="Verna">Verna</option>
+                                        <option value="City">City</option>
+                                        <option value="Ciaz">Ciaz</option>
+                                        </optgroup>
+                                        <optgroup label="SUV">
+                                        <option value="Innova Crysta">Innova Crysta</option>
+                                        <option value="Seltos">Seltos</option>
+                                        <option value="Creta">Creta</option>
+                                        </optgroup>
+                                        <optgroup label="Premium">
+                                        <option value="X6 Sport">X6 Sport</option>
+                                        <option value="Evoque">Evoque</option>
+                                        <option value="GLS">GLS</option>
+                                    </optgroup>
+                                    </select>
+                                </div>
+              </div>
+              <br>
+							<div class="row">
+								<div class="col">
+									<label style="font-family: Helvetica; font-size: 18px; text-align: left;">No. of Day(s)</label>
+									<input type="text" class="form-control" placeholder="No.of Day(s)" name="days">
+                </div>
+								<div class="col">
+									<label style="font-family: Helvetica; font-size: 18px; text-align: left;">No. of Hours</label>
+									<input type="text" class="form-control" placeholder="No.of Hours" name="hours">
+                </div>
+                <div class="col">
+									<h6>*maximum 7 days</h6>
+								</div>
+							</div>
+                            <br>
+	                     	<label for="date" style="font-family: Helvetica; font-size: 18px;">Date</label><br>
+								<input type="date" style="margin-top: -5px;"id="date" name="date" style="margin-top: 10px;" name="date">
+	                  	    <br>
+                            <br>
+                            <div class="col-auto my-1">
+                                    <label style="font-family: Helvetica; font-size: 18px; text-align: left;">Fuel Type</label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="fuelType">
+                                        <option selected>Select</option>
+                                        <option value="Petrol">Petrol</option>
+                                        <option value="Diesel">Diesel</option>
+                                    </select>
+                            </div>
+                            <br>
+                            <div class="col-auto my-1">
+                                    <label style="font-family: Helvetica; font-size: 18px; text-align: left;">Transmission</label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="transmission">
+                                        <option selected>Select</option>
+                                        <option value="Manual">Manual</option>
+                                        <option value="Automatic">Automatic</option>
+                                    </select>
+                            </div>
+                            <br>
+                            <div class="button">
+                                <button type="submit" class="btn btn-black" style="margin-left: 10px; margin-bottom: 20px;font-family: Helvetica;">Proceed to Pay
+                                </button> 
+                            </div>
+					    </form>
+            	    </div>
+         	    </div>
+      	    </div>
+        </center>
+	</section>
+	<style>
+		.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+  text-decoration:none;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+  text-decoration:none;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+  text-decoration:none;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+  text-decoration:none;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+  text-decoration:none;
+}
+	</style>
+	</body>
+</html>

@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+	</head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	<body>
+		<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light ">
+	  		<a class="navbar-brand" href="#"><img src="img/Capture3.png">Rapid Rides</a>
+            <a href="#" style="text-decoration: none; font-size: 20px; font-family:Oswald; font-weight: 400;color:#000; margin-left: 10px; text-align: center;">Hello Admin!</a>
+
+	  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav nav pills ml-auto">
+			    	<li class="nav-item ">
+			        	<a class="nav-link" href="index-admin.html">Home</a>
+                    </li>
+                      
+			        <li class="nav-item" >
+			        	<a class="nav-link" href="add-remove-admin.html">Add / Remove Car</a>
+                    </li>
+                    <li class="nav-item active">
+			        	<a class="nav-link" href="status-admin.html">Status</a>
+                    </li>
+			      	<li class="nav-item">
+			        	<a class="nav-link" href="Cars-admin-modify-page1.html">Car Details</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link " href="Enquire-admin.html">Enquiries</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="Feedback-admin.html">Feedbacks</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="index.html">Log Out</a>
+			    	</li>
+			  	</ul>
+			</div>
+		</nav>
+	</section>
+	<section id="login">
+		<center><div class="sidenav">
+         	<center><div class="login-main-text">
+            	<h2>Status of Vehicles</h2>
+            	<p>You can track vehicle status here!</p>
+         	</div></center>
+      	</div>
+      	<div class="main">
+			<div class="col-md-12">
+			   <div class="login-form">
+                      <form style="margin-top:-300px; color:#000;" action="http://localhost:8080/status" method="POST">
+                        <center>
+                            <button type="submit" class="btn btn-black">Check Status</button>
+                            </center>
+                            <br>
+						  <div class="form-group" style="color:#000;">
+						   <table class="table">
+							   <thead class="thead-dark" style="margin-left:10px;">
+								   <tr> 
+								   <th scope="col">Car ID</th>
+								   <th scope="col">Name of Car</th>
+								   <th scope="col">Manufacturer</th>
+								   <th scope="col">Category</th>
+								   <th scope="col">Status of Availability</th>
+								   </tr>
+							   </thead>
+							   <tbody>
+                                <%
+                                if(userData.length != 0){
+                                for(i = 0; i < userData.length; i++){
+                                %>
+								   <tr>
+								   <td><%- userData[i].car_id %></td>
+								   <td><%- userData[i].model_name %></td>
+								   <td><%- userData[i].manufacturer %></td>
+								   <td><%- userData[i].category %></td>
+								   <td><%- userData[i].rental_status %></td>
+                                   </tr>
+                                <% } } %>
+							   </tbody>
+						   </table>
+						   &nbsp;
+						   &nbsp;
+						   &nbsp;
+						 </div>   
+				   </form>
+			   </div>
+			</div>
+		 </div>
+      </center>
+	</section>
+	<style>
+		.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+  text-decoration:none;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+  text-decoration:none;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+  text-decoration:none;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+  text-decoration:none;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+  text-decoration:none;
+}
+	</style>
+	</body>
+</html>
