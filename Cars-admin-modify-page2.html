@@ -1,0 +1,200 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
+
+	</head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	<body>
+
+		<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light ">
+	  		<a class="navbar-brand" href="#"><img src="img/Capture3.png">Rapid Rides</a>
+            <a href="#" style="text-decoration: none; font-size: 20px; color:#000; margin-left: 10px; text-align: center;">Hello Admin!</a>
+	  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav nav pills ml-auto">
+			    	<li class="nav-item ">
+			        	<a class="nav-link" href="index-admin.html">Home</a>
+                    </li>
+                      
+			        <li class="nav-item" >
+			        	<a class="nav-link" href="add-remove-admin.html">Add / Remove Car</a>
+                    </li>
+                    <li class="nav-item">
+			        	<a class="nav-link" href="status-admin.html">Status</a>
+                    </li>
+			      	<li class="nav-item active">
+			        	<a class="nav-link" href="Cars-admin.html">Car Details</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link " href="Enquire-admin.html">Enquiries</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="Feedback-admin.html">Feedbacks</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="index.html">Log Out</a>
+			    	</li>
+			  	</ul>
+			</div>
+		</nav>
+	</section>
+	<section id="login">
+		<center><div class="sidenav">
+         	<center><div class="login-main-text">
+            	<h2>Modify Details</h2>
+            	<p>You can modify rent details of car here!</p>
+             </div></center>
+      	</div>
+      	<div class="main">
+         	<div class="col-md-12">
+            	<div class="login-form">
+               		<form style="margin-top:-300px; color:#000;" action="http://localhost:8080/modify2" method="POST">
+                           <div class="form-group" style="color:#000;">
+                            
+							
+                            <h2 style="font-family: Oswald, sans-serif; text-align: center;border-bottom: 2px solid black; max-width: 100%;">Base Fare</h2>
+                            &nbsp;
+                            <input class="form-check-input" type="checkbox" name="base" value="1" id="Base Fare" style="align-items: left;">
+                            <label class="form-check-label" for="Base Fare" style="margin-right:650px;">
+                            Select
+                            </label>
+                            <br>
+                            &nbsp;
+                            <div class="form-group row" style="color: #000;">
+                                <label for="staticEmail" class="col-sm-2 col-form-label" style="color:#000;">Current Fare</label>
+                                <div class="col-sm-10">
+                                  <textbox type="text" readonly class="form-control-plaintext" id="staticEmail" > 4500 </textbox>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">Modify Price</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputPassword" name="modifyBase" placeholder="Base Price">
+                                </div>
+                            </div>
+                            &nbsp;
+                            <h2 style="font-family: Oswald, sans-serif; text-align: center;border-bottom: 2px solid black; max-width: 100%;">Hourly Fare</h2>
+                            &nbsp;
+                            <input class="form-check-input" type="checkbox" value="2" name="hourly" id="Hourly Fare" style="align-items: left;">
+                            <label class="form-check-label" for="Hourly Fare" style="margin-right:650px;">
+                            Select
+                            </label>
+                            <br>
+                            &nbsp;
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Current Fare</label>
+                                <div class="col-sm-10">
+                                  <textbox type="text" readonly class="form-control-plaintext" id="staticEmail"> 4500 </textbox>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">Modify Fare</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputPassword" name="modifyHourly" placeholder="Hourly Price">
+                                </div>
+                            </div>
+                            <!--
+                            &nbsp;
+                            <h2 style="font-family: Oswald, sans-serif;  text-align: center; border-bottom: 2px solid black; max-width: 100%;">Fare for Diesel Vehicles</h2>
+                            &nbsp;
+                            <input class="form-check-input" type="checkbox" value="Diesel Fare" id="Diesel Fare" style="align-items: left;">
+                            <label class="form-check-label" for="Diesel Fare" style="margin-right:650px;">
+                            Select
+                            </label>
+                            <br>
+                            &nbsp;
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Current Fare</label>
+                                <div class="col-sm-10">
+                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="4500">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label" style="color:#000; font-weight: 400;">Modify Fare</label>
+                                <div class="col-sm-10">
+                                  <input type="password" class="form-control" id="inputPassword" placeholder="Price for Diesel vehicles">
+                                </div>
+                            </div>
+                            &nbsp;
+                            <h2 style="font-family: Oswald, sans-serif; text-align: center;border-bottom: 2px solid black; max-width: 100%;">Fare for Automatic Transmission</h2>
+                            &nbsp;
+                            <input class="form-check-input" type="checkbox" value="Automatic Transmission" id="Automatic Transmission" style="align-items: left;">
+                            <label class="form-check-label" for="Automatic Transmission" style="margin-right:650px;">
+                            Select
+                            </label>
+                            <br>
+                            &nbsp;
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Current Fare</label>
+                                <div class="col-sm-10">
+                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="4500">
+                                </div>
+                                
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">Modify Fare</label>
+                                <div class="col-sm-10">
+                                  <input type="password" class="form-control" id="inputPassword" placeholder="Automatic Transmission Price">
+                                </div>
+                            </div>
+                            -->
+                            &nbsp;
+                            <h2 style="font-family: Oswald, sans-serif; text-align: center;border-bottom: 2px solid black; max-width: 100%;">Availability</h2>
+                            &nbsp;
+                            <input class="form-check-input" type="checkbox" value="3" name="avail" id="Availability" style="align-items: left;">
+                            <label class="form-check-label" for="Availability" style="margin-right:650px;">
+                            Select
+                            </label>
+                            <br>
+                            &nbsp;
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Current Availability</label>
+                                <div class="col-sm-10">
+                                  <textbox type="text" readonly class="form-control-plaintext" id="staticEmail" > Available </textbox>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                
+                                <label for="inputPassword" class="col-sm-2 col-form-label">Modify Availability</label>
+                                <div class="col-sm-10">
+                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name= "availability" required>
+                                    <option selected>Select</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Rented">Unavailable</option>
+                                </select>
+                                </div>
+                            </div>
+                            &nbsp;
+	                     	<div class="form-group row" style="margin-left:100px;">
+                                
+                                    <button type="button" class="btn btn-black"><a class="Admin-click" style="text-decoration:none; " href="Cars-admin-modify-page1.html">Back
+                                    </button>
+                                    <br>
+                                    <button type="submit" class="btn btn-black" style="margin-left: 10px;"><a class="Admin-click" style="text-decoration:none; ">Save Changes
+                                    </button>
+                                
+                            </div>
+	                  	</div>   
+					</form>
+            	</div>
+         	</div>
+          </div>
+      </center>
+	</section>
+	</body>
+</html>

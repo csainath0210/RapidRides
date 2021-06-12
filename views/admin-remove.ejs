@@ -1,0 +1,202 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
+
+	</head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	<body>
+
+		<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light ">
+	  		<a class="navbar-brand" href="#"><img src="img/Capture3.png">Rapid Rides</a>
+            <a href="#" style="text-decoration: none; font-size: 20px; color:#000; margin-left: 10px; text-align: center;">Hello Admin!</a>
+	  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav nav pills ml-auto">
+			    	<li class="nav-item ">
+			        	<a class="nav-link" href="index-admin.html">Home</a>
+                    </li>
+                      
+			        <li class="nav-item" >
+			        	<a class="nav-link" href="add-remove-admin.html">Add / Remove Car</a>
+                    </li>
+                    <li class="nav-item">
+			        	<a class="nav-link" href="status-admin.html">Status</a>
+                    </li>
+			      	<li class="nav-item active">
+			        	<a class="nav-link" href="Cars-admin.html">Car Details</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link " href="Enquire-admin.html">Enquiries</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="Feedback-admin.html">Feedbacks</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="index.html">Log Out</a>
+			    	</li>
+			  	</ul>
+			</div>
+		</nav>
+	</section>
+	<section id="login">
+		<center><div class="sidenav">
+         	<center><div class="login-main-text">
+            	<h2>Modify Details</h2>
+            	<!--<p>Modify Details</p>-->
+             </div></center>
+      	</div>
+      	<div class="main">
+         	<div class="col-md-12">
+            	<div class="login-form">
+               		<form style="margin-top:-300px; color:#000;" action="http://localhost:8080/remove" method="POST">
+                           <div class="form-group" style="color:#000;">
+                            <!--<label style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 300;">Choose the car which is to be modified!</label>-->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif; margin-left: 200px;">Car ID </label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Enter Car ID" name="car_id" id="car_id" style="width: 150px;" required>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-black" style="margin-left: -250px;">Remove Car</button>
+                            </div>    
+                            </div>
+                            </div>
+                    </form>
+                            <table class="table">
+                                <thead class="thead-dark" style="margin-left:10px;">
+                                    <tr>
+                                    <th scope="col">Car ID</th>
+                                    <th scope="col">Name of Car</th>
+                                    <th scope="col">Manufacturer</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col">Fuel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% if(userData.length != 0){
+                                for(i = 0; i < userData.length; i++){
+                                %>
+                                    <tr>
+                                    <td><%- userData[i].car_id %></td>
+                                    <td><%- userData[i].model_name %></td>
+                                    <td><%- userData[i].manufacturer %></td>
+                                    <td><%- userData[i].category %></td>
+                                    <td><%- userData[i].colour %></td>
+                                    <td><%- userData[i].fuel_type %></td>
+                                    </tr>
+                                    <% } } %>
+                                    <!--<tr>
+                                    <td><input type="radio" name="radio" value="CH02"></td>
+                                    <td>CH02</td>
+                                    <td>Elite i20</td>
+                                    <td>Hyundai</td>
+                                    <td>Hatchback</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CH03"></td>
+                                    <td>CH03</td>
+                                    <td>Jazz</td>
+                                    <td>Honda</td>
+                                    <td>Hatchback</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CSD01"></td>
+                                    <td>CSD01</td>
+                                    <td>Verna</td>
+                                    <td>Hyundai</td>
+                                    <td>Sedan</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CSD02"></td>
+                                    <td>CSD02</td>
+                                    <td>City</td>
+                                    <td>Honda</td>
+                                    <td>Sedan</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CSD03"></td>
+                                    <td>CSD03</td>
+                                    <td>Ciaz</td>
+                                    <td>Suzuki</td>
+                                    <td>Sedan</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CS01"></td>
+                                    <td>CS01</td>
+                                    <td>Innova Crysta</td>
+                                    <td>Toyota</td>
+                                    <td>SUV</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CS02"></td>
+                                    <td>CS02</td>
+                                    <td>Seltos</td>
+                                    <td>Kia</td>
+                                    <td>SUV</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CS03"></td>
+                                    <td>CS03</td>
+                                    <td>Creta</td>
+                                    <td>Hyundai</td>
+                                    <td>SUV</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CP01"></td>
+                                    <td>CP01</td>
+                                    <td>X6 Sport</td>
+                                    <td>BMW</td>
+                                    <td>Premium</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio" name="radio" value="CP02"></td>
+                                    <td>CP02</td>
+                                    <td>Evoque</td>
+                                    <td>Land Rover</td>
+                                    <td>Premium</td>
+                                    </tr>
+                                    <tr>
+                                    <td><input type="radio"  name="radio" value="CP03"></td>
+                                    <td>CP03</td>
+                                    <td>GLS</td>
+                                    <td>Mercedes Benz</td>
+                                    <td>Premium</td>
+                                    </tr>-->
+                                </tbody>
+                            </table>
+                            &nbsp;
+                            &nbsp;
+							&nbsp;
+							<!--<div class="form-group row" style="margin-left:100px;">
+                                
+								<button type="submit" class="btn btn-black"><a class="Admin-click" style="text-decoration:none; " href="admin-page-successful.html">Remove
+								</button>
+							</div>-->
+	                  	</div>   
+					
+            	</div>
+         	</div>
+          </div>
+      </center>
+	</section>
+	</body>
+</html>

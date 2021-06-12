@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+	</head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	<body>
+		<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light ">
+	  		<a class="navbar-brand" href="#"><img src="img/Capture3.png">Rapid Rides</a>
+	  		<a href="#" style="text-decoration: none; font-size: 20px; color:#000; margin-left: 10px; text-align: center;">Hello User!</a>
+	  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav nav pills ml-auto">
+			    	<li class="nav-item ">
+			        	<a class="nav-link" href="index-user.html">Home</a>
+			      	</li>
+			        <!--<li class="nav-item">
+			        	<a class="nav-link" href="Login.html">Login</a>
+			        </li>-->
+			      	<li class="nav-item">
+			        	<a class="nav-link" href="Cars-user.html">Our Cars</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link " href="Enquire-user.html">Enquire</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="About Us-user.html">About Us</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="Contact Us-user.html">Contact Us</a>
+			    	</li>
+			    	<li class="nav-item active">
+			        	<a class="nav-link " href="Feedback-user.html">Feedback</a>
+			    	</li>
+			    	<li class="nav-item active">
+			        	<a class="nav-link " href="index.html">Log Out</a>
+			    	</li>
+			  	</ul>
+			</div>
+		</nav>
+	</section>
+	<% if (accepted == 0){%>
+		<div class="alert alert-warning" style="color:black">
+			<center><strong>Unable to register feedback. </strong>Try again later</center>
+		</div>
+		<% } %>
+	<% if (accepted == 1){%>
+			<div class="alert alert-success" style="color:green">
+				<center><strong>Feedback Registered </strong></center>
+			</div>
+			<% } %>
+	<section class="rating">
+		<div class="container">
+  			<span id="rateMe2"  class="empty-stars"></span>
+		</div>
+		<!-- rating.js file -->
+		<script src="js/addons/rating.js"></script>
+	</section>
+	<section id="login">
+		<center><div class="sidenav">
+         	<center><div class="login-main-text">
+            	<h2>Rapid Rides</h2>
+            	<p>Give us your valuable Feedback!</p>
+         	</div></center>
+      	</div>
+      	<div class="main">
+         	<div class="col-md-6 col-sm-12">
+            	<div class="login-form">
+               		<form action="http://localhost:8080/feedbackuser" method="POST" id="feedback">
+               			<label style="font-family: Oswald; font-size: 20px;">Enter your Feedback Here!</label>
+	                  	<div class="input-group">
+
+  							<textarea class="form-control" aria-label="With textarea" id="inputGroup-sizing-lg" style="height:150px; padding-bottom: 100px;" form="feedback" name="textbox"></textarea>
+						</div>
+						<label style="font-family: Oswald; font-size: 20px; margin-top: 10px;"> Show us your love!</label>
+						<div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+						</div>
+						<button type="submit" class="btn btn-black" style="margin-top: 10px;">Submit</button>
+               		</form>
+            	</div>
+         	</div>
+      	</div>
+      </center>
+	</section>
+	</body>
+</html>

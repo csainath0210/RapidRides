@@ -1,0 +1,187 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
+
+	</head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	<body>
+
+		<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light ">
+	  		<a class="navbar-brand" href="#"><img src="img/Capture3.png">Rapid Rides</a>
+            <a href="#" style="text-decoration: none; font-size: 20px; color:#000; margin-left: 10px; text-align: center;">Hello Admin!</a>
+	  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav nav pills ml-auto">
+			    	<li class="nav-item ">
+			        	<a class="nav-link" href="index-admin.html">Home</a>
+                    </li>
+                      
+			        <li class="nav-item active" >
+			        	<a class="nav-link" href="add-remove-admin.html">Add / Remove Car</a>
+                    </li>
+                    <li class="nav-item">
+			        	<a class="nav-link" href="status-admin.html">Status</a>
+                    </li>
+			      	<li class="nav-item ">
+			        	<a class="nav-link" href="Cars-admin.html">Car Details</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link " href="Enquire-admin.html">Enquiries</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="Feedback-admin.html">Feedbacks</a>
+			    	</li>
+			    	<li class="nav-item">
+			        	<a class="nav-link " href="index.html">Log Out</a>
+			    	</li>
+			  	</ul>
+			</div>
+		</nav>
+	</section>
+	<section id="login">
+		<center><div class="sidenav">
+         	<center><div class="login-main-text">
+            	<h2>Add a Car</h2>
+            	<p>Enter details of Car</p>
+             </div></center>
+      	</div>
+      	<div class="main">
+            <div class="col-md-6 col-sm-12">
+               <div class="login-form">
+                      <form style="margin-top:-110px;" action="http://localhost:8080/add" method="POST">
+                         <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Car ID </label>
+                                <input type="text" class="form-control" placeholder="Enter Car ID" name="car_id" required>
+                       </div>
+                       <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Car Name </label>
+                            <input type="text" class="form-control" placeholder="Enter Car Name" name="model_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Manufacturer </label>
+                                <input type="text" class="form-control" placeholder="Enter Car Manufacturer" name="manufacturer" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Colour </label>
+                                <input type="text" class="form-control" placeholder="Enter Car Colour" name="car_colour" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Category </label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="category" required>
+                                <option selected>Select</option>
+                                <option value="Hatchback">Hatchback</option>
+                                <option value="Sedan">Sedan</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Seating Capacity </label>
+                                <input type="text" class="form-control" placeholder="Enter Seating Capacity" name="capacity" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Rental Status </label><br>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="rental_status" required>
+                                <option selected>Select</option>
+                                <option value="Available">Available</option>
+                                <option value="Rented">Unavailable</option>
+                            </select>
+                       </div>
+                       <div class="form-group">
+                        <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Base Price </label>
+                            <input type="text" class="form-control" placeholder="Enter Base Price" name="base_price" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Hourly Price </label>
+                                <input type="text" class="form-control" placeholder="Enter Hourly Price" name="hourly_price" required>
+                       </div>
+                       <div class="form-group">
+                        <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Type of Fuel </label>
+                        <br>
+                            <input class="form-check-input" type="radio" value="Petrol" name="fuel" id="Petrol">
+                            <label class="form-check-label" for="Petrol">
+                            Petrol
+                            </label>
+
+                            <input class="form-check-input" type="radio" value="Diesel" name="fuel" id="Diesel" style="margin-left: 10px;">
+                            <label class="form-check-label" for="Diesel" style="margin-left: 30px;">
+                            Diesel
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Type of Transmission </label>
+                            <br>
+                                <input class="form-check-input" type="radio" name="transmission" value="Manual" id="Manual">
+                                <label class="form-check-label" for="Manual">
+                                Manual Transmission
+                                </label>
+
+                                <input class="form-check-input" type="radio" name="transmission" value="Automatic" id="Automatic" style="margin-left: 20px;">
+                                <label class="form-check-label" for="Automatic" style="margin-left: 40px;">
+                                Automatic Transmission
+                                </label>
+                       </div>
+                       <div class="form-group">
+                        <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Key Features </label>
+                        <br>
+                            <input class="form-check-input" type="checkbox" value="leather" name="leather" id="leather">
+                            <label class="form-check-label" for="leather">
+                            Leather Seats
+                            </label>
+                            
+                            <input class="form-check-input" type="checkbox" value="camera" name="camera" id="camera" style="margin-left: 20px;">
+                            <label class="form-check-label" for="camera" style="margin-left: 40px;">
+                            Reversing Camera
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" value="bluetooth" id="bluetooth" name="bluetooth" style="margin-left: 20px;">
+                            <label class="form-check-label" for="bluetooth" style="margin-left: 40px;">
+                            Bluetooth Player
+                            </label>
+                            
+                            <input class="form-check-input" type="checkbox" value="usb" id="usb" name="usb" style="margin-left: 20px;">
+                            <label class="form-check-label" for="usb" style="margin-left: 40px;">
+                            USB Charging Port
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" value="gps" name="gps" id="gps" style="margin-left: 20px;">
+                            <label class="form-check-label" for="gps" style="margin-left: 40px;">
+                            GPS Enabled
+                            </label>
+
+                            <input class="form-check-input" type="checkbox" value="cushion" name="cushion" id="cushion" style="margin-left: 20px;">
+                            <label class="form-check-label" for="cushion" style="margin-left: 40px;">
+                            Seat Cushions
+                            </label>
+                   </div>
+                       <div class="form-group">
+                        <label style="font-weight: 1000;font-family: Arial, Helvetica, sans-serif;">Image</label>
+                            <input type="file" class="form-control-file" id="file" name="file" style="margin-left: 60px;">
+                        </div>
+                       </div>
+                         <button type="submit" class="btn btn-black">Submit</button>
+                         <br>
+                         &nbsp;
+                      </form>
+               </div>
+            </div>
+         </div>
+      </center>
+	</section>
+	</body>
+</html>
